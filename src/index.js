@@ -11,7 +11,8 @@ dotenv.config()
 
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static("./public/temp"))
 app.use(cookieParser())
 // db configuration
 connectDb().then(() => app.listen(process.env.PORT || 8000, () => {
